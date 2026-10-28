@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rip Hunters</title>
+  <meta name="description" content="Every Pack. Every Collection. Every Hunt. — Browse and order trading cards from Rip Hunters.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ─── Header ─── -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <span class="logo-compass">✦</span>
+      <div class="logo-text">
+        Rip Hunters
+        <span>Every Pack · Every Hunt</span>
+      </div>
+    </a>
+
+    <div class="search-wrap">
+      <input id="search" type="search" placeholder="Search cards, sets, games…" autocomplete="off">
+    </div>
+
+    <div class="header-right">
+      <button class="cart-pill" id="cart-pill" title="View selected cards">
+        <span>Order</span>
+        <span class="cart-count">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ─── Game tabs ─── -->
+<div class="game-tabs-outer">
+  <div class="game-tabs" id="game-tabs">
+    <!-- populated by JS -->
+  </div>
+</div>
+
+<!-- ─── Main catalog ─── -->
+<main>
+  <div class="results-bar">
+    <span><strong id="results-count">—</strong> available</span>
+    <span id="gen-time" style="color:var(--muted);font-size:0.8rem"></span>
+  </div>
+  <div class="card-grid" id="grid">
+    <div class="state-msg" style="grid-column:1/-1">
+      <div class="big">⟳</div>
+      <h3>Loading catalog…</h3>
+    </div>
+  </div>
+</main>
+
+<!-- ─── YouTube placeholder ─── -->
+<section class="yt-section">
+  <div class="yt-placeholder">
+    <div class="yt-icon">▶</div>
+    <h3>Watch Us Hunt</h3>
+    <p>New pack rips &amp; collection hunts every week — YouTube channel coming soon.</p>
+  </div>
+</section>
+
+<!-- ─── Order bar (sticky bottom) ─── -->
+<div id="order-bar">
+  <div class="order-bar-inner">
+    <div class="order-summary">
+      <div class="count" id="bar-count">0 cards selected</div>
+      <div class="total" id="bar-total">$0.00</div>
+    </div>
+    <button class="btn-clear" id="btn-clear">Clear</button>
+    <button class="btn-order" id="btn-order">Request Order →</button>
+  </div>
+</div>
+
+<!-- ─── Order modal ─── -->
+<div class="modal-bg" id="modal-bg">
+  <div class="modal">
+    <button class="modal-close" id="modal-close">✕</button>
+    <h2>Request Order</h2>
+    <p class="subtitle">We'll confirm availability and send you payment details.</p>
+
+    <div class="order-items-preview" id="modal-items"></div>
+
+    <div class="modal-total">
+      <span class="label">Estimated Total</span>
+      <span class="amount" id="modal-total-amount">$0.00</span>
+    </div>
+
+    <form id="order-form" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="f-name">Name</label>
+          <input id="f-name" name="name" type="text" required placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" required placeholder="you@example.com">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="f-address">Shipping Address</label>
+        <textarea id="f-address" name="address" required placeholder="Street, City, State, ZIP"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="f-notes">Notes (optional)</label>
+        <input id="f-notes" name="notes" type="text" placeholder="Anything we should know?">
+      </div>
+      <button class="btn-submit" id="btn-submit" type="submit">Send Order Request</button>
+      <div class="form-status" id="form-status"></div>
+    </form>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

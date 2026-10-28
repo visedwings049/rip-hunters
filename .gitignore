@@ -1,0 +1,30 @@
+# Local card images — hotlinked from TCGPlayer, not needed in repo
+*/CARDS/*.webp
+*/CARDS/*.jpg
+*/CARDS/*.jpeg
+*/CARDS/*.png
+
+# Inventory CSV — private data, rebuilt daily by Email_Listener
+INVENTORY_ALL/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+.venv/
+venv/
+env/
+
+# Loose images at repo root
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# Claude & editor internals
+.claude/
+.vscode/
+*.lock
