@@ -1,6 +1,6 @@
 // Rip Hunters — storefront app
 // Formspree: replace YOUR_FORM_ID with your real id from formspree.io
-const FORMSPREE_URL = "https://formspree.io/f/mrppqnwv";
+const FORMSPREE_URL = "https://formspree.io/f/xeaagyyz";
 
 const WEIGHT_OZ_PER_CARD = 0.15;
 // Shipping brackets: [{max_oz, rate, label}]
