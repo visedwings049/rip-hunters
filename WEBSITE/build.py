@@ -45,11 +45,11 @@ def apply_pricing(raw: str) -> float:
     except (ValueError, TypeError):
         p = 0.0
     if p <= 0:
-        return 0.50
-    if p < 0.50:
-        return 0.50
+        return 0.25
     if p < 1.00:
-        return 1.00
+        # Round up to nearest $0.25
+        import math
+        return math.ceil(p / 0.25) * 0.25
     return round(p, 2)
 
 
