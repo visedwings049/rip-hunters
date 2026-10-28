@@ -118,6 +118,16 @@ header {
   font-size: 1.1rem;
 }
 
+.nav-link-tool {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.nav-link-tool:hover { color: var(--gold-light); }
+
 .header-right {
   margin-left: auto;
   display: flex;

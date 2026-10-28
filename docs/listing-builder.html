@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Listing Builder — Rip Hunters</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .lb-tabs {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .lb-tab {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--muted);
+      cursor: pointer;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.4rem 1.2rem;
+      transition: var(--transition);
+    }
+    .lb-tab.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #000;
+    }
+    .lb-panel { display: none; }
+    .lb-panel.active { display: block; }
+
+    /* Pricing panel */
+    .pricing-panel {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .combo-card-list {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+    .combo-card-list h3 {
+      background: var(--surface2);
+      border-bottom: 1px solid var(--border);
+      color: var(--gold-light);
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      padding: 0.6rem 1rem;
+      text-transform: uppercase;
+    }
+    .combo-item {
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+    }
+    .combo-item:last-child { border-bottom: none; }
+    .combo-item-name { font-size: 0.9rem; }
+    .combo-item-game { color: var(--muted); font-size: 0.75rem; }
+    .combo-item-price { color: var(--gold-light); font-weight: 700; }
+
+    .market-total {
+      background: var(--surface2);
+      border: 1px solid var(--gold-dim);
+      border-radius: var(--radius);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .market-total-label { color: var(--muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .market-total-value { color: var(--gold-light); font-family: 'Cinzel', serif; font-size: 1.4rem; }
+
+    .pricing-table {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      width: 100%;
+    }
+    .pricing-table-head {
+      background: var(--surface2);
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      padding: 0.5rem 1rem;
+    }
+    .pricing-table-head span {
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .pricing-row {
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      padding: 0.6rem 1rem;
+      transition: background var(--transition);
+    }
+    .pricing-row:last-child { border-bottom: none; }
+    .pricing-row:hover { background: var(--surface2); }
+    .pricing-row.market { background: rgba(201,160,0,0.08); }
+    .pricing-row .discount { color: var(--muted); font-size: 0.9rem; }
+    .pricing-row.market .discount { color: var(--gold); font-weight: 700; }
+    .pricing-row .savings { color: var(--danger); font-size: 0.85rem; }
+    .pricing-row.market .savings { color: var(--muted); }
+    .pricing-row .final-price { font-weight: 700; }
+    .pricing-row.market .final-price { color: var(--gold-light); }
+
+    .empty-pricing {
+      color: var(--muted);
+      padding: 3rem;
+      text-align: center;
+    }
+    .empty-pricing .big { font-size: 2.5rem; margin-bottom: 0.5rem; }
+
+    .combo-bar {
+      align-items: center;
+      background: var(--surface2);
+      border-top: 1px solid var(--gold-dim);
+      bottom: 0;
+      display: none;
+      gap: 1rem;
+      left: 0;
+      padding: 0.75rem 1.5rem;
+      position: fixed;
+      right: 0;
+      z-index: 100;
+    }
+    .combo-bar.visible { display: flex; }
+    .combo-bar-info { flex: 1; }
+    .combo-bar-count { color: var(--text); font-weight: 600; }
+    .combo-bar-total { color: var(--gold-light); font-size: 0.85rem; }
+    .btn-combo {
+      background: var(--gold);
+      border: none;
+      border-radius: var(--radius);
+      color: #000;
+      cursor: pointer;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.6rem 1.5rem;
+      transition: var(--transition);
+    }
+    .btn-combo:hover { background: var(--gold-light); }
+    .btn-combo-clear {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--muted);
+      cursor: pointer;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      transition: var(--transition);
+    }
+    .btn-combo-clear:hover { color: var(--text); border-color: var(--text); }
+  </style>
+</head>
+<body>
+
+<!-- ─── Header ─── -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-compass">✦</span>
+      <div class="logo-text">
+        Rip Hunters
+        <span>Listing Builder</span>
+      </div>
+    </a>
+    <div class="search-wrap">
+      <input id="search" type="search" placeholder="Search cards, sets, games…" autocomplete="off">
+    </div>
+    <div class="header-right">
+      <a href="index.html" style="color:var(--muted);font-size:0.85rem;text-decoration:none;">← Shop</a>
+    </div>
+  </div>
+</header>
+
+<!-- ─── Page tabs ─── -->
+<div class="lb-tabs">
+  <button class="lb-tab active" data-panel="select">Select Cards</button>
+  <button class="lb-tab" data-panel="pricing">Combo Pricing</button>
+</div>
+
+<!-- ─── Panel: Select Cards ─── -->
+<div class="lb-panel active" id="panel-select">
+  <div class="game-tabs-outer">
+    <div class="game-tabs" id="game-tabs"></div>
+  </div>
+  <main>
+    <div class="results-bar">
+      <span><strong id="results-count">—</strong> available</span>
+      <span id="gen-time" style="color:var(--muted);font-size:0.8rem"></span>
+    </div>
+    <div class="card-grid" id="grid">
+      <div class="state-msg" style="grid-column:1/-1">
+        <div class="big">⟳</div><h3>Loading catalog…</h3>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ─── Panel: Combo Pricing ─── -->
+<div class="lb-panel" id="panel-pricing">
+  <div class="pricing-panel" id="pricing-content">
+    <div class="empty-pricing">
+      <div class="big">🃏</div>
+      <h3>No cards selected</h3>
+      <p style="color:var(--muted);margin-top:0.5rem">Go to Select Cards and pick a combo.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Combo bar ─── -->
+<div class="combo-bar" id="combo-bar">
+  <div class="combo-bar-info">
+    <div class="combo-bar-count" id="bar-count">0 cards</div>
+    <div class="combo-bar-total" id="bar-total">$0.00 market value</div>
+  </div>
+  <button class="btn-combo-clear" id="btn-clear">Clear</button>
+  <button class="btn-combo" id="btn-create-combo">Create Combo →</button>
+</div>
+
+<script src="listing-builder.js"></script>
+</body>
+</html>
