@@ -168,10 +168,12 @@ function updateOrderBar() {
 
   const subtotal = [...selected.values()].reduce((s, c) => s + c.price, 0);
   const shipping = calcShipping(count);
+  const fee = calcProcessingFee(subtotal, shipping.rate);
+  const total = subtotal + shipping.rate + fee;
   document.getElementById("bar-count").textContent =
     `${count} card${count !== 1 ? "s" : ""} selected`;
   document.getElementById("bar-total").textContent =
-    `$${subtotal.toFixed(2)} + est. shipping $${shipping.rate.toFixed(2)}`;
+    `$${total.toFixed(2)} est. total`;
 }
 
 function updateCartPill() {
@@ -179,6 +181,10 @@ function updateCartPill() {
   const count = selected.size;
   pill.querySelector(".cart-count").textContent = count;
   pill.classList.toggle("has-items", count > 0);
+}
+
+function calcProcessingFee(subtotal, shippingRate) {
+  return Math.round(((subtotal + shippingRate) * 0.029 + 0.30) * 100) / 100;
 }
 
 function calcShipping(cardCount) {
@@ -202,7 +208,8 @@ function openModal() {
   const items = [...selected.values()];
   const subtotal = items.reduce((s, c) => s + c.price, 0);
   const shipping = calcShipping(items.length);
-  const total = subtotal + shipping.rate;
+  const fee = calcProcessingFee(subtotal, shipping.rate);
+  const total = subtotal + shipping.rate + fee;
 
   // Populate preview list
   const list = document.getElementById("modal-items");
@@ -215,6 +222,10 @@ function openModal() {
   `<div class="order-item-row">
      <span style="color:var(--muted)">${esc(shipping.label)} (${items.length} card${items.length!==1?"s":""})</span>
      <span class="item-price">$${shipping.rate.toFixed(2)}</span>
+   </div>
+   <div class="order-item-row">
+     <span style="color:var(--muted)">Processing fee (2.9% + $0.30)</span>
+     <span class="item-price">$${fee.toFixed(2)}</span>
    </div>`;
 
   document.getElementById("modal-total-amount").textContent = `$${total.toFixed(2)}`;
@@ -249,6 +260,7 @@ document.getElementById("order-form").addEventListener("submit", async e => {
   const items = [...selected.values()];
   const subtotal = items.reduce((s, c) => s + c.price, 0);
   const shipping = calcShipping(items.length);
+  const fee = calcProcessingFee(subtotal, shipping.rate);
   const orderSummary = items.map(c =>
     `${c.name} (${c.game} · ${c.set}) — $${c.price.toFixed(2)}`
   ).join("\n");
@@ -263,7 +275,8 @@ document.getElementById("order-form").addEventListener("submit", async e => {
     subtotal: "$" + subtotal.toFixed(2),
     shipping_method: shipping.label,
     estimated_shipping: "$" + shipping.rate.toFixed(2),
-    estimated_total: "$" + (subtotal + shipping.rate).toFixed(2),
+    processing_fee: "$" + fee.toFixed(2),
+    estimated_total: "$" + (subtotal + shipping.rate + fee).toFixed(2),
     order_json: JSON.stringify(items.map(c => ({
       id: c.id, name: c.name, game: c.game, set: c.set,
       number: c.number, rarity: c.rarity, variance: c.variance,
