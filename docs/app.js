@@ -3,13 +3,14 @@
 const FORMSPREE_URL = "https://formspree.io/f/xzeernqg";
 
 const WEIGHT_OZ_PER_CARD = 0.15;
-// Shipping brackets: [{max_oz, rate}] — last entry catches everything above
+// Shipping brackets: [{max_oz, rate, label}]
+// ≤1 oz / ≤2 oz / ≤3 oz → USPS First Class PWE (no tracking)
+// 21+ cards → UPS Ground Advantage (tracked)
 const SHIPPING_BRACKETS = [
-  { max_oz: 1,    rate: 3.99 },
-  { max_oz: 3,    rate: 4.99 },
-  { max_oz: 8,    rate: 6.99 },
-  { max_oz: 16,   rate: 8.99 },
-  { max_oz: Infinity, rate: 12.99 },
+  { max_oz: 1,        rate: 0.99,  label: "USPS First Class" },
+  { max_oz: 2,        rate: 1.50,  label: "USPS First Class" },
+  { max_oz: 3,        rate: 1.99,  label: "USPS First Class" },
+  { max_oz: Infinity, rate: 6.99,  label: "UPS Ground (tracked)" },
 ];
 
 // ─── State ─────────────────────────────────────────────────────────────
@@ -170,7 +171,7 @@ function updateOrderBar() {
   document.getElementById("bar-count").textContent =
     `${count} card${count !== 1 ? "s" : ""} selected`;
   document.getElementById("bar-total").textContent =
-    `$${subtotal.toFixed(2)} + est. shipping $${shipping.toFixed(2)}`;
+    `$${subtotal.toFixed(2)} + est. shipping $${shipping.rate.toFixed(2)}`;
 }
 
 function updateCartPill() {
@@ -183,9 +184,9 @@ function updateCartPill() {
 function calcShipping(cardCount) {
   const oz = cardCount * WEIGHT_OZ_PER_CARD;
   for (const bracket of SHIPPING_BRACKETS) {
-    if (oz <= bracket.max_oz) return bracket.rate;
+    if (oz <= bracket.max_oz) return bracket;
   }
-  return SHIPPING_BRACKETS[SHIPPING_BRACKETS.length - 1].rate;
+  return SHIPPING_BRACKETS[SHIPPING_BRACKETS.length - 1];
 }
 
 document.getElementById("btn-clear").addEventListener("click", () => {
@@ -201,7 +202,7 @@ function openModal() {
   const items = [...selected.values()];
   const subtotal = items.reduce((s, c) => s + c.price, 0);
   const shipping = calcShipping(items.length);
-  const total = subtotal + shipping;
+  const total = subtotal + shipping.rate;
 
   // Populate preview list
   const list = document.getElementById("modal-items");
@@ -212,8 +213,8 @@ function openModal() {
      </div>`
   ).join("") +
   `<div class="order-item-row">
-     <span style="color:var(--muted)">Estimated shipping (${items.length} card${items.length!==1?"s":""})</span>
-     <span class="item-price">$${shipping.toFixed(2)}</span>
+     <span style="color:var(--muted)">${esc(shipping.label)} (${items.length} card${items.length!==1?"s":""})</span>
+     <span class="item-price">$${shipping.rate.toFixed(2)}</span>
    </div>`;
 
   document.getElementById("modal-total-amount").textContent = `$${total.toFixed(2)}`;
@@ -260,8 +261,9 @@ document.getElementById("order-form").addEventListener("submit", async e => {
     order_summary: orderSummary,
     card_count: items.length,
     subtotal: "$" + subtotal.toFixed(2),
-    estimated_shipping: "$" + shipping.toFixed(2),
-    estimated_total: "$" + (subtotal + shipping).toFixed(2),
+    shipping_method: shipping.label,
+    estimated_shipping: "$" + shipping.rate.toFixed(2),
+    estimated_total: "$" + (subtotal + shipping.rate).toFixed(2),
     order_json: JSON.stringify(items.map(c => ({
       id: c.id, name: c.name, game: c.game, set: c.set,
       number: c.number, rarity: c.rarity, variance: c.variance,
