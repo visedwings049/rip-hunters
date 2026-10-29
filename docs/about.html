@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — Rip Hunters</title>
+  <meta name="description" content="Rip Hunters is a play-grade TCG card shop. We rip packs, hunt collections, and sell singles at honest prices across Pokemon, Star Wars, One Piece, Lorcana, YuGiOh, and Cyberpunk.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .about-wrap {
+      max-width: 720px;
+      margin: 3rem auto;
+      padding: 0 1.25rem 4rem;
+    }
+    .about-hero {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .about-hero .logo-mark {
+      font-size: 3rem;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+    .about-hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+    .about-hero p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .about-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+    }
+    .about-section h2 {
+      color: var(--gold-light);
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+    }
+    .about-section p {
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+    .about-section p:last-child { margin-bottom: 0; }
+    .games-grid {
+      display: grid;
+      gap: 0.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      margin-top: 0.75rem;
+    }
+    .game-chip {
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.4rem 0.75rem;
+      text-align: center;
+    }
+    .how-list {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+    .how-list li {
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      padding: 0.6rem 0;
+    }
+    .how-list li:last-child { border-bottom: none; }
+    .how-list li span {
+      color: var(--gold);
+      font-weight: 700;
+      margin-right: 0.5rem;
+    }
+    .cta-block {
+      background: linear-gradient(135deg, #1a1400, #0d0d1c);
+      border: 1px solid var(--gold-dim);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .cta-block h2 {
+      color: var(--gold-light);
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .cta-block p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.25rem;
+    }
+    .btn-cta {
+      background: var(--gold);
+      border: none;
+      border-radius: var(--radius);
+      color: #000;
+      cursor: pointer;
+      display: inline-block;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.65rem 2rem;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .btn-cta:hover { background: var(--gold-light); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-compass">✦</span>
+      <div class="logo-text">
+        Rip Hunters
+        <span>Every Pack · Every Hunt</span>
+      </div>
+    </a>
+    <div class="header-right" style="margin-left:auto">
+      <a href="index.html" style="color:var(--muted);font-size:0.85rem;text-decoration:none;">← Shop</a>
+    </div>
+  </div>
+</header>
+
+<div class="about-wrap">
+
+  <div class="about-hero">
+    <span class="logo-mark">✦</span>
+    <h1>Rip Hunters</h1>
+    <p>Every Pack. Every Collection. Every Hunt.</p>
+  </div>
+
+  <div class="about-section">
+    <h2>Who We Are</h2>
+    <p>Rip Hunters is a small TCG shop born out of a love for the hunt — cracking packs, digging through collections, and finding the cards worth keeping. We buy, rip, and sell singles across the games we actually play.</p>
+    <p>Every card in our shop is play-grade (LP–MP) and priced honestly. We're not a warehouse or a market bot. We're collectors who sell the extras.</p>
+  </div>
+
+  <div class="about-section">
+    <h2>What We Carry</h2>
+    <p>Our inventory rotates daily as we open new product and add collection pickups. Current games in stock:</p>
+    <div class="games-grid">
+      <div class="game-chip" style="border-color:#FFCB05;color:#FFCB05">Pokémon</div>
+      <div class="game-chip" style="border-color:#00AAFF;color:#00AAFF">Star Wars: Unlimited</div>
+      <div class="game-chip" style="border-color:#9B6FFF;color:#9B6FFF">Disney Lorcana</div>
+      <div class="game-chip" style="border-color:#FF5500;color:#FF5500">One Piece</div>
+      <div class="game-chip" style="border-color:#CC2200;color:#CC2200">Yu-Gi-Oh!</div>
+      <div class="game-chip" style="border-color:#FF00CC;color:#FF00CC">Cyberpunk</div>
+    </div>
+  </div>
+
+  <div class="about-section">
+    <h2>How Ordering Works</h2>
+    <ul class="how-list">
+      <li><span>1.</span> Browse the shop and select the cards you want.</li>
+      <li><span>2.</span> Hit "Request Order" and fill in your name, email, and shipping address.</li>
+      <li><span>3.</span> We confirm availability and send you a payment link — usually within 24 hours.</li>
+      <li><span>4.</span> Cards ship once payment clears. Small orders go USPS First Class. Larger orders ship UPS Ground with tracking.</li>
+    </ul>
+  </div>
+
+  <div class="about-section">
+    <h2>Condition Policy</h2>
+    <p>All cards are <strong style="color:var(--gold-light)">Lightly Played to Moderately Played (LP–MP)</strong> unless a listing says otherwise. This means you may see minor edge wear, light scratches, or slight whitening — standard for played cards.</p>
+    <p>Our prices reflect condition. These are deck-ready cards, not PSA submission candidates. If you need NM, we probably can't help — but if you want to actually play, you're in the right place.</p>
+  </div>
+
+  <div class="about-section">
+    <h2>Coming Soon</h2>
+    <p>We're working on a YouTube channel covering pack rips, collection pickups, and the history behind some of the most iconic cards ever printed. If that sounds like your thing, check back soon.</p>
+  </div>
+
+  <div class="cta-block">
+    <h2>Ready to Hunt?</h2>
+    <p>Browse over a thousand play-grade singles across six games.</p>
+    <a href="index.html" class="btn-cta">Browse the Shop →</a>
+  </div>
+
+</div>
+
+</body>
+</html>
