@@ -4,6 +4,12 @@
 */CARDS/*.jpeg
 */CARDS/*.png
 
+# Allow gallery images in docs/gallery/
+!docs/gallery/*.webp
+!docs/gallery/*.jpg
+!docs/gallery/*.jpeg
+!docs/gallery/*.png
+
 # Inventory CSV — private data, rebuilt daily by Email_Listener
 INVENTORY_ALL/
 
