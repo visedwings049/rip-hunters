@@ -25,8 +25,8 @@
     </div>
 
     <div class="header-right">
-      <a href="about.html" style="color:var(--muted);font-size:0.85rem;font-weight:600;text-decoration:none;">About</a>
-<button class="cart-pill" id="cart-pill" title="View selected cards">
+      <button id="btn-about" class="btn-about-toggle">About</button>
+      <button class="cart-pill" id="cart-pill" title="View selected cards">
         <span>Order</span>
         <span class="cart-count">0</span>
       </button>
@@ -34,7 +34,13 @@
   </div>
 </header>
 
+<!-- ─── About panel (hidden by default) ─── -->
+<div id="about-panel" class="about-panel-inline" style="display:none">
+  <iframe id="about-frame" src="about.html" frameborder="0" scrolling="yes"></iframe>
+</div>
+
 <!-- ─── Game tabs ─── -->
+<div id="shop-content">
 <div class="game-tabs-outer">
   <div class="game-tabs" id="game-tabs">
     <!-- populated by JS -->
@@ -66,6 +72,7 @@
     <p>New pack rips &amp; collection hunts every week — YouTube channel coming soon.</p>
   </div>
 </section>
+</div>
 
 <!-- ─── Order bar (sticky bottom) ─── -->
 <div id="order-bar">

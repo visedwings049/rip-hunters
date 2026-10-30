@@ -7,6 +7,15 @@
   <meta name="description" content="Rip Hunters is a play-grade TCG card shop. We rip packs, hunt collections, and sell singles at honest prices across Pokemon, Star Wars, One Piece, Lorcana, YuGiOh, and Cyberpunk.">
   <link rel="stylesheet" href="style.css">
   <style>
+    /* Hide the header when loaded inside the shop iframe */
+    @media (max-width: 99999px) {
+      body.in-frame header { display: none; }
+    }
+  </style>
+  <script>
+    if (window !== window.top) document.addEventListener("DOMContentLoaded", () => document.body.classList.add("in-frame"));
+  </script>
+  <style>
     /* ── Page tabs ── */
     .about-tabs {
       display: flex;
@@ -161,7 +170,7 @@
       <div class="logo-text">Rip Hunters<span>Every Pack · Every Hunt</span></div>
     </a>
     <div class="header-right" style="margin-left:auto">
-      <a href="index.html" style="color:var(--muted);font-size:0.85rem;text-decoration:none;">← Shop</a>
+      <a href="index.html" class="back-to-shop" style="color:var(--muted);font-size:0.85rem;text-decoration:none;">← Shop</a>
     </div>
   </div>
 </header>

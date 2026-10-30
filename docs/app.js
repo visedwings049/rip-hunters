@@ -315,6 +315,17 @@ document.getElementById("order-form").addEventListener("submit", async e => {
   }
 });
 
+// ─── About panel toggle ──────────────────────────────────────
+document.getElementById("btn-about").addEventListener("click", () => {
+  const panel = document.getElementById("about-panel");
+  const shop  = document.getElementById("shop-content");
+  const btn   = document.getElementById("btn-about");
+  const isOpen = panel.style.display !== "none";
+  panel.style.display = isOpen ? "none" : "block";
+  shop.style.display  = isOpen ? ""     : "none";
+  btn.classList.toggle("active", !isOpen);
+});
+
 // ─── Utility ─────────────────────────────────────────────────────────────
 function esc(str) {
   return String(str ?? "")
