@@ -7,10 +7,8 @@ const WEIGHT_OZ_PER_CARD = 0.15;
 // ≤1 oz / ≤2 oz / ≤3 oz → USPS First Class PWE (no tracking)
 // 21+ cards → UPS Ground Advantage (tracked)
 const SHIPPING_BRACKETS = [
-  { max_oz: 1,        rate: 0.99,  label: "USPS First Class" },
-  { max_oz: 2,        rate: 1.50,  label: "USPS First Class" },
-  { max_oz: 3,        rate: 1.99,  label: "USPS First Class" },
-  { max_oz: Infinity, rate: 6.99,  label: "UPS Ground (tracked)" },
+  { max_cards: 15, rate: 0.99,  label: "USPS First Class (no tracking)" },
+  { max_cards: Infinity, rate: 5.99, label: "USPS Ground Advantage (tracked)" },
 ];
 
 // ─── State ─────────────────────────────────────────────────────────────
@@ -188,9 +186,8 @@ function calcProcessingFee(subtotal, shippingRate) {
 }
 
 function calcShipping(cardCount) {
-  const oz = cardCount * WEIGHT_OZ_PER_CARD;
   for (const bracket of SHIPPING_BRACKETS) {
-    if (oz <= bracket.max_oz) return bracket;
+    if (cardCount <= bracket.max_cards) return bracket;
   }
   return SHIPPING_BRACKETS[SHIPPING_BRACKETS.length - 1];
 }
