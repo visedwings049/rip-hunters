@@ -170,7 +170,7 @@
       <div class="logo-text">Rip Hunters<span>Every Pack · Every Hunt</span></div>
     </a>
     <div class="header-right" style="margin-left:auto">
-      <a href="index.html" class="back-to-shop" style="color:var(--muted);font-size:0.85rem;text-decoration:none;">← Shop</a>
+      <a href="index.html" class="back-to-shop" style="color:var(--muted);font-size:0.85rem;text-decoration:none;" onclick="if(window!==window.top){window.parent.postMessage('shopNow','*');return false;}">← Shop</a>
     </div>
   </div>
 </header>
@@ -233,7 +233,7 @@
     <div class="cta-block">
       <h2>Ready to Hunt?</h2>
       <p>Browse over a thousand play-grade singles across six games.</p>
-      <a href="index.html" class="btn-cta">Browse the Shop →</a>
+      <a href="index.html" class="btn-cta" onclick="if(window!==window.top){window.parent.postMessage('shopNow','*');return false;}">Shop Now →</a>
     </div>
   </div>
 </div>

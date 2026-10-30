@@ -316,6 +316,14 @@ document.getElementById("order-form").addEventListener("submit", async e => {
 });
 
 // ─── About panel toggle ──────────────────────────────────────
+function closeAboutPanel() {
+  document.getElementById("about-panel").style.display = "none";
+  document.getElementById("shop-content").style.display = "";
+  const btn = document.getElementById("btn-about");
+  btn.classList.remove("active");
+  btn.textContent = "About";
+}
+
 document.getElementById("btn-about").addEventListener("click", () => {
   const panel = document.getElementById("about-panel");
   const shop  = document.getElementById("shop-content");
@@ -324,6 +332,12 @@ document.getElementById("btn-about").addEventListener("click", () => {
   panel.style.display = isOpen ? "none" : "block";
   shop.style.display  = isOpen ? ""     : "none";
   btn.classList.toggle("active", !isOpen);
+  btn.textContent = isOpen ? "About" : "← Shop";
+});
+
+// Listen for "shopNow" message from the about iframe
+window.addEventListener("message", e => {
+  if (e.data === "shopNow") closeAboutPanel();
 });
 
 // ─── Utility ─────────────────────────────────────────────────────────────
