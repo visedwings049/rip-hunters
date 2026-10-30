@@ -237,6 +237,51 @@ header {
   text-shadow: 0 0 8px var(--tab-color, var(--gold));
 }
 
+/* ─── Set sub-tabs ─── */
+.set-tabs-outer {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.set-tabs {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  flex-wrap: wrap;
+}
+
+.set-tabs::-webkit-scrollbar { display: none; }
+
+.set-tab {
+  flex-shrink: 0;
+  padding: 0.3rem 0.9rem;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.set-tab:hover {
+  color: var(--text);
+  border-color: var(--tab-color, var(--gold));
+}
+
+.set-tab.active {
+  color: var(--bg);
+  background: var(--tab-color, var(--gold));
+  border-color: var(--tab-color, var(--gold));
+}
+
 /* ─── Main content ─── */
 main {
   max-width: 1400px;

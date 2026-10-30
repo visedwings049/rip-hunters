@@ -15,6 +15,7 @@ const SHIPPING_BRACKETS = [
 let allCards = [];
 let gameColors = {};
 let activeGame = "All";
+let activeSet = "All";
 let searchQuery = "";
 let selected = new Map(); // id → card object
 
@@ -49,6 +50,58 @@ function buildTabs(games) {
       document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
       btn.classList.add("active");
       activeGame = g;
+      activeSet = "All";
+      buildSetTabs(g);
+      renderGrid();
+    });
+    container.appendChild(btn);
+  });
+  buildSetTabs("All");
+}
+
+function buildSetTabs(game) {
+  const outer = document.getElementById("set-tabs-outer");
+  const container = document.getElementById("set-tabs");
+
+  if (game === "All") {
+    outer.style.display = "none";
+    return;
+  }
+
+  const sets = [...new Set(
+    allCards.filter(c => c.game === game).map(c => c.set).filter(Boolean)
+  )].sort();
+
+  if (sets.length <= 1) {
+    outer.style.display = "none";
+    return;
+  }
+
+  const color = gameColors[game] || "var(--gold)";
+  outer.style.display = "";
+  container.innerHTML = "";
+
+  const allBtn = document.createElement("button");
+  allBtn.className = "set-tab active";
+  allBtn.textContent = "All Sets";
+  allBtn.style.setProperty("--tab-color", color);
+  allBtn.addEventListener("click", () => {
+    document.querySelectorAll(".set-tab").forEach(t => t.classList.remove("active"));
+    allBtn.classList.add("active");
+    activeSet = "All";
+    renderGrid();
+  });
+  container.appendChild(allBtn);
+
+  sets.forEach(s => {
+    const btn = document.createElement("button");
+    btn.className = "set-tab";
+    btn.textContent = s;
+    btn.style.setProperty("--tab-color", color);
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".set-tab").forEach(t => t.classList.remove("active"));
+      btn.classList.add("active");
+      activeSet = s;
       renderGrid();
     });
     container.appendChild(btn);
@@ -65,6 +118,7 @@ document.getElementById("search").addEventListener("input", e => {
 function filteredCards() {
   return allCards.filter(c => {
     if (activeGame !== "All" && c.game !== activeGame) return false;
+    if (activeSet !== "All" && c.set !== activeSet) return false;
     if (searchQuery) {
       const hay = `${c.name} ${c.set} ${c.game} ${c.rarity} ${c.variance}`.toLowerCase();
       if (!hay.includes(searchQuery)) return false;
