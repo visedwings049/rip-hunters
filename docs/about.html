@@ -132,6 +132,24 @@
     .pin-card-body { padding: 0.75rem 1rem; }
     .pin-card-title { color: var(--text); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.25rem; }
     .pin-card-desc { color: var(--muted); font-size: 0.8rem; line-height: 1.5; }
+
+    /* Pinterest embed wrapper — maintains ~9:16 aspect ratio */
+    .pin-embed-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 178%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .pin-embed-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
   </style>
 </head>
 <body>
@@ -215,7 +233,15 @@
 <div class="about-panel" id="panel-gallery">
   <div class="gallery-wrap">
     <h2>TCG Card Gallery</h2>
-    <div class="pin-grid" id="pin-grid"></div>
+    <div class="pin-grid">
+      <!-- ADD NEW PINTEREST EMBEDS HERE ↓ -->
+      <div class="pin-embed-wrap">
+        <iframe src="https://assets.pinterest.com/ext/embed.html?id=629800329190102472" frameborder="0" scrolling="no"></iframe>
+      </div>
+      <div class="pin-embed-wrap">
+        <iframe src="https://assets.pinterest.com/ext/embed.html?id=629800329190102492" frameborder="0" scrolling="no"></iframe>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -228,34 +254,6 @@
       btn.classList.add("active");
       document.getElementById("panel-" + btn.dataset.panel).classList.add("active");
     });
-  });
-
-  // ── Gallery images ─────────────────────────────────────────────────────
-  // To add a new pin: drop the image in docs/gallery/ and add a line below.
-  const PINS = [
-    {
-      src: "gallery/pokemon-legendary.webp",
-      title: "The Most Legendary Pokémon Cards",
-      desc: "Release year & current value — from Pikachu Illustrator to Ancient Mew."
-    },
-    {
-      src: "gallery/starwars-legendary.webp",
-      title: "The Most Legendary Star Wars Unlimited Cards",
-      desc: "Release year & current value — serialized, showcase, and promo chase cards."
-    },
-    // ADD NEW PINS HERE ↓
-  ];
-
-  const grid = document.getElementById("pin-grid");
-  PINS.forEach(pin => {
-    grid.innerHTML += `
-      <div class="pin-card">
-        <img src="${pin.src}" alt="${pin.title}" loading="lazy">
-        <div class="pin-card-body">
-          <div class="pin-card-title">${pin.title}</div>
-          <div class="pin-card-desc">${pin.desc}</div>
-        </div>
-      </div>`;
   });
 </script>
 
