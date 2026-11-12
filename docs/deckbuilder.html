@@ -1,0 +1,941 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cyberpunk TCG Deck Builder | Rip Hunters</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --cp-pink:   #FF00CC;
+      --cp-red:    #FF3333;
+      --cp-green:  #33FF66;
+      --cp-blue:   #3399FF;
+      --cp-yellow: #FFCC00;
+      --cp-grey:   #8888aa;
+    }
+
+    /* ── Page shell ── */
+    .db-page { max-width: 1500px; margin: 0 auto; padding: 1rem; }
+
+    .db-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      background: linear-gradient(135deg, #FF00CC 0%, #FF66FF 60%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-align: center;
+      margin: 1rem 0 0.25rem;
+    }
+    .db-subtitle {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── Legend pool ── */
+    .legend-section { margin-bottom: 1.5rem; }
+    .legend-section h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      color: var(--cp-pink);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .color-tabs {
+      display: flex; gap: 0.4rem; flex-wrap: wrap;
+      margin-bottom: 0.75rem;
+    }
+    .color-tab {
+      padding: 0.3rem 0.8rem;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      color: var(--muted);
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 600;
+      transition: all 0.15s;
+    }
+    .color-tab:hover { border-color: var(--cp-grey); color: var(--text); }
+    .color-tab.active { color: #fff; border-color: transparent; }
+    .color-tab[data-color="all"].active  { background: var(--cp-pink); }
+    .color-tab[data-color="red"].active  { background: var(--cp-red); }
+    .color-tab[data-color="green"].active { background: var(--cp-green); color: #000; }
+    .color-tab[data-color="blue"].active  { background: var(--cp-blue); }
+    .color-tab[data-color="yellow"].active { background: var(--cp-yellow); color: #000; }
+
+    .legend-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 0.6rem;
+    }
+
+    .legend-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+      position: relative;
+    }
+    .legend-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--cp-grey);
+    }
+    .legend-card.selected {
+      border-color: var(--cp-pink);
+      box-shadow: 0 0 10px rgba(255,0,204,0.5);
+    }
+    .legend-card.disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    .legend-card-img {
+      width: 100%;
+      aspect-ratio: 2/3;
+      object-fit: cover;
+      display: block;
+      background: var(--surface2);
+    }
+    .legend-card-img-placeholder {
+      width: 100%;
+      aspect-ratio: 2/3;
+      background: var(--surface2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.5rem;
+    }
+    .legend-card-body {
+      padding: 0.4rem 0.5rem 0.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .legend-card-char {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .legend-card-name {
+      font-size: 0.6rem;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 0.1rem;
+    }
+    .legend-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.3rem;
+    }
+    .color-pip {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .color-pip.red    { background: var(--cp-red); }
+    .color-pip.green  { background: var(--cp-green); }
+    .color-pip.blue   { background: var(--cp-blue); }
+    .color-pip.yellow { background: var(--cp-yellow); }
+    .foil-badge {
+      font-size: 0.55rem;
+      padding: 0.1rem 0.3rem;
+      background: linear-gradient(135deg, #FFD700, #FF6600);
+      border-radius: 3px;
+      color: #000;
+      font-weight: 700;
+    }
+    .legend-card .check-mark {
+      position: absolute;
+      top: 4px; right: 4px;
+      width: 20px; height: 20px;
+      background: var(--cp-pink);
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: #fff;
+      font-weight: 700;
+    }
+    .legend-card.selected .check-mark { display: flex; }
+
+    /* ── Selected legends bar ── */
+    .selected-legends {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .legend-slot {
+      flex: 1;
+      min-width: 160px;
+      background: var(--surface);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 0.6rem 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      min-height: 56px;
+      transition: border-color 0.2s;
+    }
+    .legend-slot.filled {
+      border-style: solid;
+      border-color: var(--cp-pink);
+    }
+    .legend-slot-num {
+      font-size: 1.5rem;
+      color: var(--border);
+      font-weight: 700;
+      font-family: 'Cinzel', serif;
+      flex-shrink: 0;
+    }
+    .legend-slot.filled .legend-slot-num { color: var(--cp-pink); }
+    .legend-slot-info { min-width: 0; }
+    .legend-slot-char { font-size: 0.85rem; font-weight: 700; color: var(--text); }
+    .legend-slot-sub  { font-size: 0.7rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .legend-slot-remove {
+      margin-left: auto;
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .legend-slot-remove:hover { color: var(--danger); background: rgba(255,68,68,0.1); }
+
+    /* ── RAM summary ── */
+    .ram-summary {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+      padding: 0.6rem 0.8rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      align-items: center;
+    }
+    .ram-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-right: 0.25rem;
+    }
+    .ram-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+    }
+    .ram-chip.red    { border-color: var(--cp-red);    color: var(--cp-red); }
+    .ram-chip.green  { border-color: var(--cp-green);  color: var(--cp-green); }
+    .ram-chip.blue   { border-color: var(--cp-blue);   color: var(--cp-blue); }
+    .ram-chip.yellow { border-color: var(--cp-yellow); color: var(--cp-yellow); }
+    .ram-chip.zero   { opacity: 0.3; }
+
+    /* ── Build section ── */
+    .build-section {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 1rem;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .build-section { grid-template-columns: 1fr; }
+    }
+
+    /* ── Card pool ── */
+    .pool-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .pool-search {
+      flex: 1;
+      min-width: 180px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0.4rem 0.9rem;
+      color: var(--text);
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.9rem;
+    }
+    .pool-search:focus { outline: none; border-color: var(--cp-pink); }
+    .pool-count { font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
+
+    .card-pool-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      max-height: 60vh;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+    .card-pool-list::-webkit-scrollbar { width: 4px; }
+    .card-pool-list::-webkit-scrollbar-track { background: var(--surface); }
+    .card-pool-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    .pool-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.35rem 0.6rem;
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .pool-row:hover { border-color: var(--cp-grey); background: var(--surface2); }
+    .pool-row-name { flex: 1; font-size: 0.85rem; color: var(--text); min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pool-row-rarity {
+      font-size: 0.65rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .pool-row-rarity.c  { background: #333355; color: #aaa; }
+    .pool-row-rarity.uc { background: #2a3a2a; color: #88cc88; }
+    .pool-row-rarity.r  { background: #3a2a1a; color: #FFB347; }
+    .pool-row-rarity.e  { background: #3a1a3a; color: #cc88ff; }
+    .pool-row-rarity.s  { background: #1a2a3a; color: #88ccff; }
+    .pool-row-add {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--cp-pink);
+      flex-shrink: 0;
+      background: rgba(255,0,204,0.1);
+      border: 1px solid rgba(255,0,204,0.3);
+      border-radius: 4px;
+      padding: 0.1rem 0.5rem;
+      cursor: pointer;
+    }
+    .pool-row-add:hover { background: rgba(255,0,204,0.2); }
+    .pool-row-add.maxed { opacity: 0.3; cursor: not-allowed; }
+    .pool-row-count {
+      font-size: 0.75rem;
+      color: var(--cp-pink);
+      min-width: 1.2rem;
+      text-align: right;
+      font-weight: 700;
+    }
+
+    /* ── Deck list ── */
+    .decklist-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.75rem;
+      position: sticky;
+      top: 72px;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .decklist-panel::-webkit-scrollbar { width: 4px; }
+    .decklist-panel::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+    .decklist-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .decklist-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      color: var(--cp-pink);
+    }
+    .deck-count-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.1rem 0.5rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .deck-count-badge.ok     { border-color: var(--cp-green); color: var(--cp-green); }
+    .deck-count-badge.low    { border-color: var(--cp-yellow); color: var(--cp-yellow); }
+    .deck-count-badge.over   { border-color: var(--cp-red); color: var(--cp-red); }
+
+    .decklist-section-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    .deck-entry {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.2rem 0;
+      border-bottom: 1px solid rgba(30,30,64,0.5);
+    }
+    .deck-entry-count {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--cp-pink);
+      min-width: 1.6rem;
+    }
+    .deck-entry-name { flex: 1; font-size: 0.78rem; color: var(--text); min-width: 0; }
+    .deck-entry-remove {
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 0.8rem;
+      padding: 0.1rem 0.3rem;
+    }
+    .deck-entry-remove:hover { color: var(--danger); }
+
+    .btn-export {
+      width: 100%;
+      margin-top: 0.5rem;
+      background: var(--surface2);
+      border: 1px solid var(--cp-pink);
+      color: var(--cp-pink);
+      border-radius: 6px;
+      padding: 0.5rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      transition: background 0.15s;
+    }
+    .btn-export:hover { background: rgba(255,0,204,0.12); }
+    .btn-clear-deck {
+      width: 100%;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      border-radius: 6px;
+      padding: 0.4rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: color 0.15s;
+    }
+    .btn-clear-deck:hover { color: var(--danger); border-color: var(--danger); }
+
+    .deck-empty-msg {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    /* ── Legend placeholder img ── */
+    .ph-char {
+      font-size: 0.65rem;
+      text-align: center;
+      color: var(--muted);
+      line-height: 1.3;
+      word-break: break-word;
+      padding: 0.3rem;
+    }
+    .ph-icon { font-size: 2rem; }
+
+    /* ── Workspace hidden by default ── */
+    #workspace { display: none; }
+    #workspace.visible { display: block; }
+
+    /* ── Notice ── */
+    .ram-note {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-left: auto;
+      font-style: italic;
+    }
+
+    /* ── Back link ── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      transition: color 0.15s;
+    }
+    .back-link:hover { color: var(--text); }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 1.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── Header ─── -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-compass">✦</span>
+      <div class="logo-text">
+        Rip Hunters
+        <span>Every Pack · Every Hunt</span>
+      </div>
+    </a>
+    <div style="flex:1"></div>
+    <a href="index.html" class="btn-about-toggle" style="text-decoration:none">← Shop</a>
+  </div>
+</header>
+
+<div class="db-page">
+  <h1 class="db-title">CYBERPUNK TCG DECK BUILDER</h1>
+  <p class="db-subtitle">Welcome to Night City — Beta Set · Pick 3 Legends, build your 40–50 card deck</p>
+
+  <!-- ── STEP 1: Choose Legends ── -->
+  <div class="legend-section">
+    <h2>Step 1 — Choose Your 3 Legends</h2>
+
+    <div class="color-tabs" id="color-tabs">
+      <button class="color-tab active" data-color="all">All</button>
+      <button class="color-tab" data-color="red">🔴 Red</button>
+      <button class="color-tab" data-color="green">🟢 Green</button>
+      <button class="color-tab" data-color="blue">🔵 Blue</button>
+      <button class="color-tab" data-color="yellow">🟡 Yellow</button>
+    </div>
+
+    <div class="legend-grid" id="legend-grid"></div>
+  </div>
+
+  <!-- ── Selected Legends ── -->
+  <div class="selected-legends" id="selected-legends">
+    <div class="legend-slot" id="slot-0">
+      <div class="legend-slot-num">1</div>
+      <div class="legend-slot-info"><div class="legend-slot-sub">Empty</div></div>
+    </div>
+    <div class="legend-slot" id="slot-1">
+      <div class="legend-slot-num">2</div>
+      <div class="legend-slot-info"><div class="legend-slot-sub">Empty</div></div>
+    </div>
+    <div class="legend-slot" id="slot-2">
+      <div class="legend-slot-num">3</div>
+      <div class="legend-slot-info"><div class="legend-slot-sub">Empty</div></div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- ── STEP 2: Build Deck ── -->
+  <div id="workspace">
+    <h2 style="font-family:'Cinzel',serif;font-size:0.9rem;letter-spacing:.15em;color:var(--cp-pink);text-transform:uppercase;margin-bottom:.75rem;">
+      Step 2 — Build Your Deck
+    </h2>
+
+    <!-- RAM summary -->
+    <div class="ram-summary" id="ram-summary">
+      <span class="ram-label">RAM</span>
+      <span class="ram-chip red"   id="ram-red">   <span class="color-pip red"></span> Red <strong id="ram-red-val">0</strong></span>
+      <span class="ram-chip green" id="ram-green">  <span class="color-pip green"></span> Green <strong id="ram-green-val">0</strong></span>
+      <span class="ram-chip blue"  id="ram-blue">   <span class="color-pip blue"></span> Blue <strong id="ram-blue-val">0</strong></span>
+      <span class="ram-chip yellow" id="ram-yellow"> <span class="color-pip yellow"></span> Yellow <strong id="ram-yellow-val">0</strong></span>
+      <span class="ram-note">Cards shown are not yet filtered by RAM — add cards freely</span>
+    </div>
+
+    <div class="build-section">
+      <!-- Card Pool -->
+      <div>
+        <div class="pool-header">
+          <input class="pool-search" id="pool-search" type="search" placeholder="Search cards…" autocomplete="off">
+          <span class="pool-count" id="pool-count"></span>
+        </div>
+        <div class="card-pool-list" id="card-pool"></div>
+      </div>
+
+      <!-- Deck List -->
+      <div class="decklist-panel">
+        <div class="decklist-header">
+          <span class="decklist-title">Deck List</span>
+          <span class="deck-count-badge" id="deck-badge">0 / 50</span>
+        </div>
+
+        <div>
+          <div class="decklist-section-label">Legends</div>
+          <div id="dl-legends"></div>
+        </div>
+
+        <div>
+          <div class="decklist-section-label">Cards</div>
+          <div id="dl-cards">
+            <div class="deck-empty-msg">Add cards from the pool →</div>
+          </div>
+        </div>
+
+        <button class="btn-export" id="btn-export">⬇ Export Deck List</button>
+        <button class="btn-clear-deck" id="btn-clear-deck">Clear Deck</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Data ──────────────────────────────────────────────────────────────────
+let legendsAll = [];
+let cardsAll   = [];
+let selectedLegends = [];   // up to 3 legend objects
+let deck = new Map();        // cardId → {card, count}
+
+let colorFilter = "all";
+let searchQuery = "";
+
+// ── Boot ─────────────────────────────────────────────────────────────────
+fetch("cyberpunk-cards.json")
+  .then(r => r.json())
+  .then(data => {
+    legendsAll = data.legends || [];
+    cardsAll   = data.cards   || [];
+    renderLegendGrid();
+    renderPool();
+  })
+  .catch(() => {
+    document.getElementById("legend-grid").innerHTML =
+      '<p style="color:var(--muted);grid-column:1/-1">Failed to load card data.</p>';
+  });
+
+// ── Color tabs ────────────────────────────────────────────────────────────
+document.getElementById("color-tabs").addEventListener("click", e => {
+  const tab = e.target.closest(".color-tab");
+  if (!tab) return;
+  document.querySelectorAll(".color-tab").forEach(t => t.classList.remove("active"));
+  tab.classList.add("active");
+  colorFilter = tab.dataset.color;
+  renderLegendGrid();
+});
+
+// ── Legend grid ───────────────────────────────────────────────────────────
+function renderLegendGrid() {
+  const grid = document.getElementById("legend-grid");
+
+  // Show base versions only (not foil duplicates) OR show foil if base already selected
+  // Group by character, show all options per character
+  let visible = legendsAll.filter(l =>
+    colorFilter === "all" || l.color === colorFilter
+  );
+
+  grid.innerHTML = visible.map(l => legendCardHTML(l)).join("");
+
+  grid.querySelectorAll(".legend-card").forEach(el => {
+    el.addEventListener("click", () => toggleLegend(el.dataset.id));
+  });
+}
+
+function legendCardHTML(l) {
+  const isSelected = selectedLegends.some(s => s.id === l.id);
+  const charSelected = selectedLegends.some(s => s.character === l.character && s.id !== l.id);
+  const full = selectedLegends.length >= 3 && !isSelected;
+  const disabled = (full || charSelected) && !isSelected;
+
+  const imgHTML = l.image
+    ? `<img class="legend-card-img" src="${esc(l.image)}" alt="${esc(l.clean)}" loading="lazy"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+    : "";
+  const phStyle = l.image ? "display:none" : "";
+  const shortChar = titleCase(l.character);
+
+  return `
+<div class="legend-card${isSelected ? " selected" : ""}${disabled ? " disabled" : ""}"
+     data-id="${esc(l.id)}" title="${esc(l.clean)}">
+  <div class="check-mark">✓</div>
+  ${imgHTML}
+  <div class="legend-card-img-placeholder" style="${phStyle}">
+    <div class="ph-icon">⬡</div>
+    <div class="ph-char">${esc(shortChar)}</div>
+  </div>
+  <div class="legend-card-body">
+    <div class="legend-card-char">${esc(shortChar)}</div>
+    <div class="legend-card-name">${esc(subtitle(l.clean))}</div>
+    <div class="legend-card-footer">
+      <span class="color-pip ${l.color}"></span>
+      ${l.is_foil ? '<span class="foil-badge">FOIL</span>' : `<span style="font-size:.6rem;color:var(--muted)">${esc(l.rarity)}</span>`}
+    </div>
+  </div>
+</div>`;
+}
+
+function titleCase(str) {
+  return str.replace(/\b\w/g, c => c.toUpperCase());
+}
+function subtitle(name) {
+  const idx = name.indexOf(" - ");
+  return idx >= 0 ? name.slice(idx + 3) : "";
+}
+
+// ── Legend selection ──────────────────────────────────────────────────────
+function toggleLegend(id) {
+  const legend = legendsAll.find(l => l.id === id);
+  if (!legend) return;
+
+  const idx = selectedLegends.findIndex(l => l.id === id);
+  if (idx >= 0) {
+    // Deselect
+    selectedLegends.splice(idx, 1);
+  } else {
+    // Can't add same character twice
+    if (selectedLegends.some(l => l.character === legend.character)) return;
+    if (selectedLegends.length >= 3) return;
+    selectedLegends.push(legend);
+  }
+
+  renderLegendGrid();
+  renderSlots();
+  renderRAM();
+  renderDeckLegends();
+
+  if (selectedLegends.length === 3) {
+    document.getElementById("workspace").classList.add("visible");
+  } else {
+    document.getElementById("workspace").classList.remove("visible");
+  }
+}
+
+function renderSlots() {
+  for (let i = 0; i < 3; i++) {
+    const slot = document.getElementById(`slot-${i}`);
+    const leg  = selectedLegends[i];
+    if (leg) {
+      slot.classList.add("filled");
+      slot.innerHTML = `
+        <div class="legend-slot-num">${i + 1}</div>
+        <span class="color-pip ${leg.color}" style="flex-shrink:0"></span>
+        <div class="legend-slot-info">
+          <div class="legend-slot-char">${esc(titleCase(leg.character))}</div>
+          <div class="legend-slot-sub">${esc(subtitle(leg.clean) || leg.clean)}</div>
+        </div>
+        <button class="legend-slot-remove" data-idx="${i}" title="Remove">✕</button>`;
+    } else {
+      slot.classList.remove("filled");
+      slot.innerHTML = `
+        <div class="legend-slot-num">${i + 1}</div>
+        <div class="legend-slot-info"><div class="legend-slot-sub">Empty — click a legend above</div></div>`;
+    }
+  }
+  document.querySelectorAll(".legend-slot-remove").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.stopPropagation();
+      const idx = parseInt(btn.dataset.idx);
+      selectedLegends.splice(idx, 1);
+      renderLegendGrid();
+      renderSlots();
+      renderRAM();
+      renderDeckLegends();
+      document.getElementById("workspace").classList.remove("visible");
+    });
+  });
+}
+
+// ── RAM ───────────────────────────────────────────────────────────────────
+function renderRAM() {
+  const ram = { red: 0, green: 0, blue: 0, yellow: 0 };
+  selectedLegends.forEach(l => { ram[l.color] = (ram[l.color] || 0) + (l.ram || 2); });
+
+  for (const color of ["red", "green", "blue", "yellow"]) {
+    const val = ram[color] || 0;
+    document.getElementById(`ram-${color}-val`).textContent = val;
+    const chip = document.getElementById(`ram-${color}`);
+    chip.classList.toggle("zero", val === 0);
+  }
+}
+
+// ── Card pool ─────────────────────────────────────────────────────────────
+document.getElementById("pool-search").addEventListener("input", e => {
+  searchQuery = e.target.value.toLowerCase().trim();
+  renderPool();
+});
+
+function renderPool() {
+  const pool = document.getElementById("card-pool");
+  const q    = searchQuery;
+
+  const visible = cardsAll.filter(c =>
+    !q || c.clean.toLowerCase().includes(q) || (c.rarity || "").toLowerCase().includes(q)
+  );
+
+  document.getElementById("pool-count").textContent =
+    `${visible.length} card${visible.length !== 1 ? "s" : ""}`;
+
+  if (visible.length === 0) {
+    pool.innerHTML = '<div style="color:var(--muted);font-size:.8rem;padding:.5rem 0">No cards match</div>';
+    return;
+  }
+
+  pool.innerHTML = visible.map(c => {
+    const inDeck   = deck.has(c.id) ? deck.get(c.id).count : 0;
+    const maxed    = inDeck >= 3;
+    const rarityKey = (c.rarity || "c").toLowerCase().replace(/[^a-z]/, "");
+    return `
+<div class="pool-row" data-id="${esc(c.id)}">
+  <span class="pool-row-name">${esc(c.clean)}</span>
+  <span class="pool-row-rarity ${rarityKey}">${esc(c.rarity || "?")}</span>
+  ${inDeck > 0 ? `<span class="pool-row-count">${inDeck}×</span>` : ""}
+  <button class="pool-row-add${maxed ? " maxed" : ""}" data-id="${esc(c.id)}" ${maxed ? "disabled" : ""}>+ Add</button>
+</div>`;
+  }).join("");
+
+  pool.querySelectorAll(".pool-row-add:not(.maxed)").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.stopPropagation();
+      addToDeck(btn.dataset.id);
+    });
+  });
+  pool.querySelectorAll(".pool-row").forEach(row => {
+    row.addEventListener("click", e => {
+      if (e.target.closest("button")) return;
+      addToDeck(row.dataset.id);
+    });
+  });
+}
+
+// ── Deck ──────────────────────────────────────────────────────────────────
+function addToDeck(cardId) {
+  const card = cardsAll.find(c => c.id === cardId);
+  if (!card) return;
+  if (!deck.has(cardId)) deck.set(cardId, { card, count: 0 });
+  const entry = deck.get(cardId);
+  if (entry.count >= 3) return;
+  entry.count++;
+  renderDeckList();
+  renderPool();         // refresh count display
+}
+
+function removeFromDeck(cardId) {
+  if (!deck.has(cardId)) return;
+  const entry = deck.get(cardId);
+  entry.count--;
+  if (entry.count <= 0) deck.delete(cardId);
+  renderDeckList();
+  renderPool();
+}
+
+function renderDeckLegends() {
+  const el = document.getElementById("dl-legends");
+  if (selectedLegends.length === 0) {
+    el.innerHTML = '<div class="deck-empty-msg">No legends selected</div>';
+    return;
+  }
+  const sorted = [...selectedLegends].sort((a, b) =>
+    a.clean.localeCompare(b.clean)
+  );
+  el.innerHTML = sorted.map(l => `
+<div class="deck-entry">
+  <span class="deck-entry-count">1×</span>
+  <span class="deck-entry-name" style="color:var(--cp-${l.color})">${esc(l.clean)}</span>
+</div>`).join("");
+}
+
+function renderDeckList() {
+  const dl    = document.getElementById("dl-cards");
+  const badge = document.getElementById("deck-badge");
+
+  const entries = [...deck.values()].sort((a, b) =>
+    a.card.clean.localeCompare(b.card.clean)
+  );
+  const total = entries.reduce((s, e) => s + e.count, 0);
+
+  badge.textContent = `${total} / 50`;
+  badge.className   = "deck-count-badge " + (total >= 40 && total <= 50 ? "ok" : total < 40 ? "low" : "over");
+
+  if (entries.length === 0) {
+    dl.innerHTML = '<div class="deck-empty-msg">Add cards from the pool →</div>';
+    return;
+  }
+
+  dl.innerHTML = entries.map(e => `
+<div class="deck-entry">
+  <span class="deck-entry-count">${e.count}×</span>
+  <span class="deck-entry-name">${esc(e.card.clean)}</span>
+  <button class="deck-entry-remove" data-id="${esc(e.card.id)}" title="Remove one">−</button>
+</div>`).join("");
+
+  dl.querySelectorAll(".deck-entry-remove").forEach(btn => {
+    btn.addEventListener("click", () => removeFromDeck(btn.dataset.id));
+  });
+}
+
+// ── Clear deck ────────────────────────────────────────────────────────────
+document.getElementById("btn-clear-deck").addEventListener("click", () => {
+  if (deck.size === 0) return;
+  if (!confirm("Clear the deck?")) return;
+  deck.clear();
+  renderDeckList();
+  renderPool();
+});
+
+// ── Export ────────────────────────────────────────────────────────────────
+document.getElementById("btn-export").addEventListener("click", () => {
+  const lines = [];
+  lines.push("=== LEGENDS ===");
+  [...selectedLegends]
+    .sort((a, b) => a.clean.localeCompare(b.clean))
+    .forEach(l => lines.push(`1x ${l.clean}`));
+
+  const total = [...deck.values()].reduce((s, e) => s + e.count, 0);
+  lines.push("");
+  lines.push(`=== DECK (${total} cards) ===`);
+  [...deck.values()]
+    .sort((a, b) => a.card.clean.localeCompare(b.card.clean))
+    .forEach(e => lines.push(`${e.count}x ${e.card.clean}`));
+
+  const text = lines.join("\n");
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById("btn-export");
+    btn.textContent = "✓ Copied to clipboard!";
+    setTimeout(() => { btn.textContent = "⬇ Export Deck List"; }, 2000);
+  }).catch(() => {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand("copy");
+    document.body.removeChild(ta);
+  });
+});
+
+// ── Utility ───────────────────────────────────────────────────────────────
+function esc(str) {
+  return String(str ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1667 @@
+{
+  "set": "Welcome to Night City",
+  "legends": [
+    {
+      "id": "B001",
+      "name": "Adam Smasher - Ender of Legends (Epic)",
+      "clean": "Adam Smasher - Ender of Legends",
+      "number": "001",
+      "rarity": "E",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715007.jpg",
+      "character": "adam smasher",
+      "color": "red",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B041",
+      "name": "Adam Smasher - Metal Over Meat (Epic)",
+      "clean": "Adam Smasher - Metal Over Meat",
+      "number": "041",
+      "rarity": "E",
+      "image": "",
+      "character": "adam smasher",
+      "color": "red",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B141",
+      "name": "Adam Smasher - Ender of Legends (ILegend)",
+      "clean": "Adam Smasher - Ender of Legends",
+      "number": "141",
+      "rarity": "IL",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715007.jpg",
+      "character": "adam smasher",
+      "color": "red",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B160",
+      "name": "Adam Smasher - Metal Over Meat (IO)",
+      "clean": "Adam Smasher - Metal Over Meat",
+      "number": "160",
+      "rarity": "IO",
+      "image": "",
+      "character": "adam smasher",
+      "color": "red",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B042",
+      "name": "Alt Cunningham - Mother of Daemons (Rare)",
+      "clean": "Alt Cunningham - Mother of Daemons",
+      "number": "042",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715012.jpg",
+      "character": "alt cunningham",
+      "color": "blue",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B106",
+      "name": "Alt Cunningham - Soulkiller Architect (Rare)",
+      "clean": "Alt Cunningham - Soulkiller Architect",
+      "number": "106",
+      "rarity": "R",
+      "image": "",
+      "character": "alt cunningham",
+      "color": "blue",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B161",
+      "name": "Alt Cunningham - Mother of Daemons (IO)",
+      "clean": "Alt Cunningham - Mother of Daemons",
+      "number": "161",
+      "rarity": "IO",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715012.jpg",
+      "character": "alt cunningham",
+      "color": "blue",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B155",
+      "name": "Alt Cunningham - Soulkiller Architect (ILegend)",
+      "clean": "Alt Cunningham - Soulkiller Architect",
+      "number": "155",
+      "rarity": "IL",
+      "image": "",
+      "character": "alt cunningham",
+      "color": "blue",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B002",
+      "name": "Dexter DeShawn - Off the Grid (Rare)",
+      "clean": "Dexter DeShawn - Off the Grid",
+      "number": "002",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714170.jpg",
+      "character": "dexter deshawn",
+      "color": "yellow",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B142",
+      "name": "Dexter DeShawn - Off the Grid (ILegend)",
+      "clean": "Dexter DeShawn - Off the Grid",
+      "number": "142",
+      "rarity": "IL",
+      "image": "",
+      "character": "dexter deshawn",
+      "color": "yellow",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B036",
+      "name": "Dum Dum - Maelstrom Triggerman (Rare)",
+      "clean": "Dum Dum - Maelstrom Triggerman",
+      "number": "036",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715032.jpg",
+      "character": "dum dum",
+      "color": "red",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B145",
+      "name": "Dum Dum - Maelstrom Triggerman (ILegend)",
+      "clean": "Dum Dum - Maelstrom Triggerman",
+      "number": "145",
+      "rarity": "IL",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715032.jpg",
+      "character": "dum dum",
+      "color": "red",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B107",
+      "name": "Evelyn Parker - Beautiful Enigma (Rare)",
+      "clean": "Evelyn Parker - Beautiful Enigma",
+      "number": "107",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714269.jpg",
+      "character": "evelyn parker",
+      "color": "blue",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B113",
+      "name": "Evelyn Parker - Scheming Siren",
+      "clean": "Evelyn Parker - Scheming Siren",
+      "number": "113",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714275.jpg",
+      "character": "evelyn parker",
+      "color": "blue",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B156",
+      "name": "Evelyn Parker - Beautiful Enigma (ILegend)",
+      "clean": "Evelyn Parker - Beautiful Enigma",
+      "number": "156",
+      "rarity": "IL",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714269.jpg",
+      "character": "evelyn parker",
+      "color": "blue",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B071",
+      "name": "Goro Takemura - Vengeful Bodyguard (Rare)",
+      "clean": "Goro Takemura - Vengeful Bodyguard",
+      "number": "071",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715043.jpg",
+      "character": "goro takemura",
+      "color": "yellow",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B150",
+      "name": "Goro Takemura - Vengeful Bodyguard (ILegend)",
+      "clean": "Goro Takemura - Vengeful Bodyguard",
+      "number": "150",
+      "rarity": "IL",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715043.jpg",
+      "character": "goro takemura",
+      "color": "yellow",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B072",
+      "name": "Hanako Arasaka - Daughter of the Emperor (Rare)",
+      "clean": "Hanako Arasaka - Daughter of the Emperor",
+      "number": "072",
+      "rarity": "R",
+      "image": "",
+      "character": "hanako arasaka",
+      "color": "yellow",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B046",
+      "name": "Hanako Arasaka - In a Gilded Cage (Rare)",
+      "clean": "Hanako Arasaka - In a Gilded Cage",
+      "number": "046",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715047.jpg",
+      "character": "hanako arasaka",
+      "color": "yellow",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B151",
+      "name": "Hanako Arasaka - Daughter of the Emperor (ILegend)",
+      "clean": "Hanako Arasaka - Daughter of the Emperor",
+      "number": "151",
+      "rarity": "IL",
+      "image": "",
+      "character": "hanako arasaka",
+      "color": "yellow",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B162",
+      "name": "Hanako Arasaka - In a Gilded Cage (IO)",
+      "clean": "Hanako Arasaka - In a Gilded Cage",
+      "number": "162",
+      "rarity": "IO",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715047.jpg",
+      "character": "hanako arasaka",
+      "color": "yellow",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B073",
+      "name": "Jackie Welles - Mama's Favorite (Rare)",
+      "clean": "Jackie Welles - Mama's Favorite",
+      "number": "073",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714235.jpg",
+      "character": "jackie welles",
+      "color": "red",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B048",
+      "name": "Jackie Welles - Ride or Die Choom",
+      "clean": "Jackie Welles - Ride or Die Choom",
+      "number": "048",
+      "rarity": "E",
+      "image": "",
+      "character": "jackie welles",
+      "color": "red",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B152",
+      "name": "Jackie Welles - Mama's Favorite (ILegend)",
+      "clean": "Jackie Welles - Mama's Favorite",
+      "number": "152",
+      "rarity": "IL",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714235.jpg",
+      "character": "jackie welles",
+      "color": "red",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B011",
+      "name": "Johnny Silverhand - Never Stop Fighting (Epic)",
+      "clean": "Johnny Silverhand - Never Stop Fighting",
+      "number": "011",
+      "rarity": "E",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714321.jpg",
+      "character": "johnny silverhand",
+      "color": "red",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B003",
+      "name": "Johnny Silverhand - Rocking Renegade (Secret)",
+      "clean": "Johnny Silverhand - Rocking Renegade",
+      "number": "003",
+      "rarity": "S",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715048.jpg",
+      "character": "johnny silverhand",
+      "color": "red",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B159",
+      "name": "Johnny Silverhand - Never Stop Fighting (IO)",
+      "clean": "Johnny Silverhand - Never Stop Fighting",
+      "number": "159",
+      "rarity": "IO",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714321.jpg",
+      "character": "johnny silverhand",
+      "color": "red",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B168",
+      "name": "Johnny Silverhand - Rocking Renegade (ISecret)",
+      "clean": "Johnny Silverhand - Rocking Renegade",
+      "number": "168",
+      "rarity": "IS",
+      "image": "",
+      "character": "johnny silverhand",
+      "color": "red",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B108",
+      "name": "Judy Alvarez - Braindance Maestro (Epic)",
+      "clean": "Judy Alvarez - Braindance Maestro",
+      "number": "108",
+      "rarity": "E",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715056.jpg",
+      "character": "judy alvarez",
+      "color": "blue",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B116",
+      "name": "Judy Alvarez - Nothing to Doubt (Secret)",
+      "clean": "Judy Alvarez - Nothing to Doubt",
+      "number": "116",
+      "rarity": "S",
+      "image": "",
+      "character": "judy alvarez",
+      "color": "blue",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B157",
+      "name": "Judy Alvarez - Braindance Maestro (ILegend)",
+      "clean": "Judy Alvarez - Braindance Maestro",
+      "number": "157",
+      "rarity": "IL",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715056.jpg",
+      "character": "judy alvarez",
+      "color": "blue",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B171",
+      "name": "Judy Alvarez - Nothing to Doubt (ISecret)",
+      "clean": "Judy Alvarez - Nothing to Doubt",
+      "number": "171",
+      "rarity": "IS",
+      "image": "",
+      "character": "judy alvarez",
+      "color": "blue",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B037",
+      "name": "Kerry Eurodyne - Axe, Attitude, Audience (Rare)",
+      "clean": "Kerry Eurodyne - Axe, Attitude, Audience",
+      "number": "037",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714199.jpg",
+      "character": "kerry eurodyne",
+      "color": "green",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B012",
+      "name": "Kerry Eurodyne - The Last Rockerboy",
+      "clean": "Kerry Eurodyne - The Last Rockerboy",
+      "number": "012",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715059.jpg",
+      "character": "kerry eurodyne",
+      "color": "green",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B146",
+      "name": "Kerry Eurodyne - Axe, Attitude, Audience (ILegend)",
+      "clean": "Kerry Eurodyne - Axe, Attitude, Audience",
+      "number": "146",
+      "rarity": "IL",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714199.jpg",
+      "character": "kerry eurodyne",
+      "color": "green",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B117",
+      "name": "Lizzy Wizzy - Delicate Weapon",
+      "clean": "Lizzy Wizzy - Delicate Weapon",
+      "number": "117",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715064.jpg",
+      "character": "lizzy wizzy",
+      "color": "green",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B014",
+      "name": "Meredith Stout - Stone Cold Corpo",
+      "clean": "Meredith Stout - Stone Cold Corpo",
+      "number": "014",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715075.jpg",
+      "character": "meredith stout",
+      "color": "yellow",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B038",
+      "name": "Muamar Reyes - El Capitan (Rare)",
+      "clean": "Muamar Reyes - El Capitan",
+      "number": "038",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715080.jpg",
+      "character": "muamar reyes",
+      "color": "green",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B147",
+      "name": "Muamar Reyes - El Capitan (ILegend)",
+      "clean": "Muamar Reyes - El Capitan",
+      "number": "147",
+      "rarity": "IL",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715080.jpg",
+      "character": "muamar reyes",
+      "color": "green",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B165",
+      "name": "Overwatch - Panam's Gift (IO)",
+      "clean": "Overwatch - Panam's Gift",
+      "number": "165",
+      "rarity": "IO",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715087.jpg",
+      "character": "Overwatch",
+      "color": "red",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B074",
+      "name": "Padre - Man of the Cross (Rare)",
+      "clean": "Padre - Man of the Cross",
+      "number": "074",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714236.jpg",
+      "character": "padre",
+      "color": "green",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B153",
+      "name": "Padre - Man of the Cross (ILegend)",
+      "clean": "Padre - Man of the Cross",
+      "number": "153",
+      "rarity": "IL",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714236.jpg",
+      "character": "padre",
+      "color": "green",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B075",
+      "name": "Panam Palmer - Nomad Cavalry (Epic)",
+      "clean": "Panam Palmer - Nomad Cavalry",
+      "number": "075",
+      "rarity": "E",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715090.jpg",
+      "character": "panam palmer",
+      "color": "green",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B085",
+      "name": "Panam Palmer - Strength Through Family (Secret)",
+      "clean": "Panam Palmer - Strength Through Family",
+      "number": "085",
+      "rarity": "S",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714247.jpg",
+      "character": "panam palmer",
+      "color": "green",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B154",
+      "name": "Panam Palmer - Nomad Cavalry (ILegend)",
+      "clean": "Panam Palmer - Nomad Cavalry",
+      "number": "154",
+      "rarity": "IL",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715090.jpg",
+      "character": "panam palmer",
+      "color": "green",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B170",
+      "name": "Panam Palmer - Strength Through Family (ISecret)",
+      "clean": "Panam Palmer - Strength Through Family",
+      "number": "170",
+      "rarity": "IS",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714247.jpg",
+      "character": "panam palmer",
+      "color": "green",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B123",
+      "name": "Placide - Voodoo Sentinel",
+      "clean": "Placide - Voodoo Sentinel",
+      "number": "123",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715094.jpg",
+      "character": "placide",
+      "color": "green",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B039",
+      "name": "River Ward - Detective on the Hunt (Rare)",
+      "clean": "River Ward - Detective on the Hunt",
+      "number": "039",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715101.jpg",
+      "character": "river ward",
+      "color": "blue",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B148",
+      "name": "River Ward - Detective on the Hunt (ILegend)",
+      "clean": "River Ward - Detective on the Hunt",
+      "number": "148",
+      "rarity": "IL",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715101.jpg",
+      "character": "river ward",
+      "color": "blue",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B040",
+      "name": "Rogue Amendiares - Preem Solo (Rare)",
+      "clean": "Rogue Amendiares - Preem Solo",
+      "number": "040",
+      "rarity": "R",
+      "image": "",
+      "character": "rogue amendiares",
+      "color": "yellow",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B126",
+      "name": "Rogue Amendiares - Queen of the Afterlife (Epic)",
+      "clean": "Rogue Amendiares - Queen of the Afterlife",
+      "number": "126",
+      "rarity": "E",
+      "image": "",
+      "character": "rogue amendiares",
+      "color": "yellow",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B149",
+      "name": "Rogue Amendiares - Preem Solo (ILegend)",
+      "clean": "Rogue Amendiares - Preem Solo",
+      "number": "149",
+      "rarity": "IL",
+      "image": "",
+      "character": "rogue amendiares",
+      "color": "yellow",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B166",
+      "name": "Rogue Amendiares - Queen of the Afterlife (IO)",
+      "clean": "Rogue Amendiares - Queen of the Afterlife",
+      "number": "166",
+      "rarity": "IO",
+      "image": "",
+      "character": "rogue amendiares",
+      "color": "yellow",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B016",
+      "name": "Royce - Don't Call Me Simon",
+      "clean": "Royce - Don't Call Me Simon",
+      "number": "016",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714178.jpg",
+      "character": "royce",
+      "color": "red",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B004",
+      "name": "Royce - Psycho on the Edge (Rare)",
+      "clean": "Royce - Psycho on the Edge",
+      "number": "004",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714179.jpg",
+      "character": "royce",
+      "color": "red",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B143",
+      "name": "Royce - Psycho on the Edge (ILegend)",
+      "clean": "Royce - Psycho on the Edge",
+      "number": "143",
+      "rarity": "IL",
+      "image": "",
+      "character": "royce",
+      "color": "red",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B088",
+      "name": "Sandayu Oda - Hanako's Guardian (Rare)",
+      "clean": "Sandayu Oda - Hanako's Guardian",
+      "number": "088",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715109.jpg",
+      "character": "sandayu oda",
+      "color": "yellow",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B164",
+      "name": "Sandayu Oda - Hanako's Guardian (IO)",
+      "clean": "Sandayu Oda - Hanako's Guardian",
+      "number": "164",
+      "rarity": "IO",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715109.jpg",
+      "character": "sandayu oda",
+      "color": "yellow",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B109",
+      "name": "Sasha Yakovleva - Won't Let You Down (Secret)",
+      "clean": "Sasha Yakovleva - Won't Let You Down",
+      "number": "109",
+      "rarity": "S",
+      "image": "",
+      "character": "sasha yakovleva",
+      "color": "blue",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B169",
+      "name": "Sasha Yakovleva - Won't Let You Down (ISecret)",
+      "clean": "Sasha Yakovleva - Won't Let You Down",
+      "number": "169",
+      "rarity": "IS",
+      "image": "",
+      "character": "sasha yakovleva",
+      "color": "blue",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B163",
+      "name": "The Relic - Experimental Biochip (IO)",
+      "clean": "The Relic - Experimental Biochip",
+      "number": "163",
+      "rarity": "IO",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715124.jpg",
+      "character": "The Relic",
+      "color": "red",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B167",
+      "name": "Towerfall (IO)",
+      "clean": "Towerfall",
+      "number": "167",
+      "rarity": "IO",
+      "image": "",
+      "character": "Towerfall",
+      "color": "red",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B020",
+      "name": "V - Roamer of the Badlands",
+      "clean": "V - Roamer of the Badlands",
+      "number": "020",
+      "rarity": "E",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714182.jpg",
+      "character": "v",
+      "color": "red",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B005a",
+      "name": "V - Streetkid (a)",
+      "clean": "V - Streetkid",
+      "number": "005a",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714167.jpg",
+      "character": "v",
+      "color": "red",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B005b",
+      "name": "V - Streetkid (b)",
+      "clean": "V - Streetkid",
+      "number": "005b",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714167.jpg",
+      "character": "v",
+      "color": "red",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B144",
+      "name": "V - Streetkid (ILegend)",
+      "clean": "V - Streetkid",
+      "number": "144",
+      "rarity": "IL",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714167.jpg",
+      "character": "v",
+      "color": "red",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B057",
+      "name": "Viktor Vektor - Drop Your Illusions",
+      "clean": "Viktor Vektor - Drop Your Illusions",
+      "number": "057",
+      "rarity": "E",
+      "image": "",
+      "character": "viktor vektor",
+      "color": "blue",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B058",
+      "name": "Viktor Vektor - You Might Feel a Little Pinch",
+      "clean": "Viktor Vektor - You Might Feel a Little Pinch",
+      "number": "058",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714220.jpg",
+      "character": "viktor vektor",
+      "color": "blue",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B110",
+      "name": "Wakako Okada - Peace and Harmony (Rare)",
+      "clean": "Wakako Okada - Peace and Harmony",
+      "number": "110",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715139.jpg",
+      "character": "wakako okada",
+      "color": "yellow",
+      "ram": 2,
+      "is_foil": false
+    },
+    {
+      "id": "B158",
+      "name": "Wakako Okada - Peace and Harmony (ILegend)",
+      "clean": "Wakako Okada - Peace and Harmony",
+      "number": "158",
+      "rarity": "IL",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715139.jpg",
+      "character": "wakako okada",
+      "color": "yellow",
+      "ram": 2,
+      "is_foil": true
+    },
+    {
+      "id": "B022",
+      "name": "Yorinobu Arasaka - Steel Dragon",
+      "clean": "Yorinobu Arasaka - Steel Dragon",
+      "number": "022",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715144.jpg",
+      "character": "yorinobu arasaka",
+      "color": "yellow",
+      "ram": 2,
+      "is_foil": false
+    }
+  ],
+  "cards": [
+    {
+      "id": "B098",
+      "name": "(Don't Fear) The Reaper",
+      "clean": "(Don't Fear) The Reaper",
+      "number": "098",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715005.jpg"
+    },
+    {
+      "id": "B006",
+      "name": "6th Street Recruits",
+      "clean": "6th Street Recruits",
+      "number": "006",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714168.jpg"
+    },
+    {
+      "id": "B059",
+      "name": "Adrenaline Converter",
+      "clean": "Adrenaline Converter",
+      "number": "059",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714221.jpg"
+    },
+    {
+      "id": "B065",
+      "name": "Afterparty at Lizzie's",
+      "clean": "Afterparty at Lizzie's",
+      "number": "065",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714227.jpg"
+    },
+    {
+      "id": "B027",
+      "name": "All is Lost",
+      "clean": "All is Lost",
+      "number": "027",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714189.jpg"
+    },
+    {
+      "id": "B007",
+      "name": "Animals Wrecker",
+      "clean": "Animals Wrecker",
+      "number": "007",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714169.jpg"
+    },
+    {
+      "id": "B028",
+      "name": "Appetite for Destruction",
+      "clean": "Appetite for Destruction",
+      "number": "028",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714190.jpg"
+    },
+    {
+      "id": "B023",
+      "name": "Arasaka Emergency Radioport",
+      "clean": "Arasaka Emergency Radioport",
+      "number": "023",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714185.jpg"
+    },
+    {
+      "id": "B043",
+      "name": "Augmented Negotiators",
+      "clean": "Augmented Negotiators",
+      "number": "043",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714205.jpg"
+    },
+    {
+      "id": "B029",
+      "name": "Bonnie and Clyde",
+      "clean": "Bonnie and Clyde",
+      "number": "029",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714191.jpg"
+    },
+    {
+      "id": "B066",
+      "name": "Bootleg Black Sapphire Show",
+      "clean": "Bootleg Black Sapphire Show",
+      "number": "066",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715019.jpg"
+    },
+    {
+      "id": "B044",
+      "name": "Caliber - Totentanz's Top Dog",
+      "clean": "Caliber - Totentanz's Top Dog",
+      "number": "044",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715020.jpg"
+    },
+    {
+      "id": "B030",
+      "name": "Carnage at the Colosseum",
+      "clean": "Carnage at the Colosseum",
+      "number": "030",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715021.jpg"
+    },
+    {
+      "id": "B008",
+      "name": "Chrome Fang",
+      "clean": "Chrome Fang",
+      "number": "008",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714170.jpg"
+    },
+    {
+      "id": "B131",
+      "name": "Chrome Reverie",
+      "clean": "Chrome Reverie",
+      "number": "131",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715023.jpg"
+    },
+    {
+      "id": "B076",
+      "name": "Corpo Security",
+      "clean": "Corpo Security",
+      "number": "076",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714238.jpg"
+    },
+    {
+      "id": "B097",
+      "name": "Corporate Surveillance",
+      "clean": "Corporate Surveillance",
+      "number": "097",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714259.jpg"
+    },
+    {
+      "id": "B067",
+      "name": "Cyberpsychosis",
+      "clean": "Cyberpsychosis",
+      "number": "067",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714229.jpg"
+    },
+    {
+      "id": "B024",
+      "name": "Deadman Transmitter",
+      "clean": "Deadman Transmitter",
+      "number": "024",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714186.jpg"
+    },
+    {
+      "id": "B111",
+      "name": "Delamain - Rideshare AI",
+      "clean": "Delamain - Rideshare AI",
+      "number": "111",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715028.jpg"
+    },
+    {
+      "id": "B112",
+      "name": "Delamain Cab",
+      "clean": "Delamain Cab",
+      "number": "112",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715029.jpg"
+    },
+    {
+      "id": "B031",
+      "name": "Detonate",
+      "clean": "Detonate",
+      "number": "031",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714193.jpg"
+    },
+    {
+      "id": "B128",
+      "name": "Dying Night - V's Pistol",
+      "clean": "Dying Night - V's Pistol",
+      "number": "128",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714290.jpg"
+    },
+    {
+      "id": "B009",
+      "name": "El Sombreron - La Venganza Lenta",
+      "clean": "El Sombreron - La Venganza Lenta",
+      "number": "009",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715034.jpg"
+    },
+    {
+      "id": "B077",
+      "name": "Emergency Atlus",
+      "clean": "Emergency Atlus",
+      "number": "077",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714239.jpg"
+    },
+    {
+      "id": "B078",
+      "name": "Field Operator",
+      "clean": "Field Operator",
+      "number": "078",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714240.jpg"
+    },
+    {
+      "id": "B132",
+      "name": "Floor It",
+      "clean": "Floor It",
+      "number": "132",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714294.jpg"
+    },
+    {
+      "id": "B099",
+      "name": "Fool on the Hill",
+      "clean": "Fool on the Hill",
+      "number": "099",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714261.jpg"
+    },
+    {
+      "id": "B045",
+      "name": "Gilded Maton",
+      "clean": "Gilded Maton",
+      "number": "045",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714207.jpg"
+    },
+    {
+      "id": "B060",
+      "name": "Gorilla Arms",
+      "clean": "Gorilla Arms",
+      "number": "060",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715042.jpg"
+    },
+    {
+      "id": "B032",
+      "name": "Gunpoint Diplomacy",
+      "clean": "Gunpoint Diplomacy",
+      "number": "032",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715044.jpg"
+    },
+    {
+      "id": "B114",
+      "name": "Hacked Corpo",
+      "clean": "Hacked Corpo",
+      "number": "114",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714276.jpg"
+    },
+    {
+      "id": "B047",
+      "name": "Heywood Ripperdoc",
+      "clean": "Heywood Ripperdoc",
+      "number": "047",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715048.jpg"
+    },
+    {
+      "id": "B033",
+      "name": "Industrial Assembly",
+      "clean": "Industrial Assembly",
+      "number": "033",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714195.jpg"
+    },
+    {
+      "id": "B115",
+      "name": "Jacked-In Voodoo Boy",
+      "clean": "Jacked-In Voodoo Boy",
+      "number": "115",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714277.jpg"
+    },
+    {
+      "id": "B010",
+      "name": "Japantown Jonin",
+      "clean": "Japantown Jonin",
+      "number": "010",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714172.jpg"
+    },
+    {
+      "id": "B061",
+      "name": "Kiroshi Optics",
+      "clean": "Kiroshi Optics",
+      "number": "061",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714223.jpg"
+    },
+    {
+      "id": "B013",
+      "name": "La Llorona - Ghost of the Past",
+      "clean": "La Llorona - Ghost of the Past",
+      "number": "013",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714175.jpg"
+    },
+    {
+      "id": "B133",
+      "name": "Les Elemens",
+      "clean": "Les Elemens",
+      "number": "133",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715062.jpg"
+    },
+    {
+      "id": "B068",
+      "name": "Live with the Aftermath",
+      "clean": "Live with the Aftermath",
+      "number": "068",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714230.jpg"
+    },
+    {
+      "id": "B049",
+      "name": "Maelstrom Goons",
+      "clean": "Maelstrom Goons",
+      "number": "049",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714211.jpg"
+    },
+    {
+      "id": "B079",
+      "name": "Maelstrom Zealots",
+      "clean": "Maelstrom Zealots",
+      "number": "079",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714241.jpg"
+    },
+    {
+      "id": "B118",
+      "name": "Maman Brigitte - Spirit of Death",
+      "clean": "Maman Brigitte - Spirit of Death",
+      "number": "118",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715067.jpg"
+    },
+    {
+      "id": "B062",
+      "name": "Mandibular Upgrade",
+      "clean": "Mandibular Upgrade",
+      "number": "062",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714224.jpg"
+    },
+    {
+      "id": "B025",
+      "name": "Mantis Blades",
+      "clean": "Mantis Blades",
+      "number": "025",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/717239.jpg"
+    },
+    {
+      "id": "B080",
+      "name": "MaxTac AV",
+      "clean": "MaxTac AV",
+      "number": "080",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714242.jpg"
+    },
+    {
+      "id": "B081",
+      "name": "MaxTac Heavy",
+      "clean": "MaxTac Heavy",
+      "number": "081",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714243.jpg"
+    },
+    {
+      "id": "B082",
+      "name": "MaxTac Squadron",
+      "clean": "MaxTac Squadron",
+      "number": "082",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714244.jpg"
+    },
+    {
+      "id": "B050",
+      "name": "MaxTac Suppression Team",
+      "clean": "MaxTac Suppression Team",
+      "number": "050",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714212.jpg"
+    },
+    {
+      "id": "B100",
+      "name": "Memory Relapse",
+      "clean": "Memory Relapse",
+      "number": "100",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715074.jpg"
+    },
+    {
+      "id": "B119",
+      "name": "Misty Olszewski - Mender of Broken Spirits",
+      "clean": "Misty Olszewski - Mender of Broken Spirits",
+      "number": "119",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715076.jpg"
+    },
+    {
+      "id": "B120",
+      "name": "Modded Kusanagi",
+      "clean": "Modded Kusanagi",
+      "number": "120",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714282.jpg"
+    },
+    {
+      "id": "B121",
+      "name": "Modded Muramasa",
+      "clean": "Modded Muramasa",
+      "number": "121",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714283.jpg"
+    },
+    {
+      "id": "B122",
+      "name": "Mox Inciters",
+      "clean": "Mox Inciters",
+      "number": "122",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714284.jpg"
+    },
+    {
+      "id": "B083",
+      "name": "Nadia - Fighting Through Grief",
+      "clean": "Nadia - Fighting Through Grief",
+      "number": "083",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715081.jpg"
+    },
+    {
+      "id": "B129",
+      "name": "NetWatch Netdriver",
+      "clean": "NetWatch Netdriver",
+      "number": "129",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715082.jpg"
+    },
+    {
+      "id": "B134",
+      "name": "Nocturne OP55 N1",
+      "clean": "Nocturne OP55 N1",
+      "number": "134",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715083.jpg"
+    },
+    {
+      "id": "B015",
+      "name": "Octant",
+      "clean": "Octant",
+      "number": "015",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714177.jpg"
+    },
+    {
+      "id": "B051",
+      "name": "Offduty Malfini",
+      "clean": "Offduty Malfini",
+      "number": "051",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714213.jpg"
+    },
+    {
+      "id": "B034",
+      "name": "Over the Edge",
+      "clean": "Over the Edge",
+      "number": "034",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714196.jpg"
+    },
+    {
+      "id": "B093",
+      "name": "Overwatch - Panam's Gift (Epic)",
+      "clean": "Overwatch - Panam's Gift",
+      "number": "093",
+      "rarity": "E",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715087.jpg"
+    },
+    {
+      "id": "B084",
+      "name": "Pacifica Netrunner",
+      "clean": "Pacifica Netrunner",
+      "number": "084",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714246.jpg"
+    },
+    {
+      "id": "B101",
+      "name": "Peace Offering",
+      "clean": "Peace Offering",
+      "number": "101",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714263.jpg"
+    },
+    {
+      "id": "B086",
+      "name": "Pepe Najarro - Working Doubles",
+      "clean": "Pepe Najarro - Working Doubles",
+      "number": "086",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715093.jpg"
+    },
+    {
+      "id": "B124",
+      "name": "Psycho Squad",
+      "clean": "Psycho Squad",
+      "number": "124",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714286.jpg"
+    },
+    {
+      "id": "B135",
+      "name": "Pyramid Song",
+      "clean": "Pyramid Song",
+      "number": "135",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715096.jpg"
+    },
+    {
+      "id": "B136",
+      "name": "Reboot Optics",
+      "clean": "Reboot Optics",
+      "number": "136",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714298.jpg"
+    },
+    {
+      "id": "B087",
+      "name": "Riding Nomad",
+      "clean": "Riding Nomad",
+      "number": "087",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714249.jpg"
+    },
+    {
+      "id": "B094",
+      "name": "Riot Shield",
+      "clean": "Riot Shield",
+      "number": "094",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714256.jpg"
+    },
+    {
+      "id": "B125",
+      "name": "Rita Wheeler - No Stupid Questions",
+      "clean": "Rita Wheeler - No Stupid Questions",
+      "number": "125",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714287.jpg"
+    },
+    {
+      "id": "B052",
+      "name": "Rockn' Rockerboy",
+      "clean": "Rockn' Rockerboy",
+      "number": "052",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714214.jpg"
+    },
+    {
+      "id": "B017",
+      "name": "Ruthless Lowlife",
+      "clean": "Ruthless Lowlife",
+      "number": "017",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714179.jpg"
+    },
+    {
+      "id": "B069",
+      "name": "Safety Override",
+      "clean": "Safety Override",
+      "number": "069",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714231.jpg"
+    },
+    {
+      "id": "B095",
+      "name": "Sandevistan",
+      "clean": "Sandevistan",
+      "number": "095",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714257.jpg"
+    },
+    {
+      "id": "B026",
+      "name": "Satori - Sword of Saburo",
+      "clean": "Satori - Sword of Saburo",
+      "number": "026",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714188.jpg"
+    },
+    {
+      "id": "B089",
+      "name": "Saul Bright - Stormrider",
+      "clean": "Saul Bright - Stormrider",
+      "number": "089",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715113.jpg"
+    },
+    {
+      "id": "B018",
+      "name": "Screw - Lovelorn Fool",
+      "clean": "Screw - Lovelorn Fool",
+      "number": "018",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714180.jpg"
+    },
+    {
+      "id": "B053",
+      "name": "Secondhand Bombus",
+      "clean": "Secondhand Bombus",
+      "number": "053",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714215.jpg"
+    },
+    {
+      "id": "B035",
+      "name": "Shattered Memories",
+      "clean": "Shattered Memories",
+      "number": "035",
+      "rarity": "R",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714197.jpg"
+    },
+    {
+      "id": "B054",
+      "name": "Sketchy Ripper",
+      "clean": "Sketchy Ripper",
+      "number": "054",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714216.jpg"
+    },
+    {
+      "id": "B019",
+      "name": "Swordwise Huscle",
+      "clean": "Swordwise Huscle",
+      "number": "019",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714181.jpg"
+    },
+    {
+      "id": "B102",
+      "name": "Synapse Burnout",
+      "clean": "Synapse Burnout",
+      "number": "102",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714264.jpg"
+    },
+    {
+      "id": "B055",
+      "name": "T-Bug - Amateur Philosopher",
+      "clean": "T-Bug - Amateur Philosopher",
+      "number": "055",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715120.jpg"
+    },
+    {
+      "id": "B103",
+      "name": "Take Control",
+      "clean": "Take Control",
+      "number": "103",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714265.jpg"
+    },
+    {
+      "id": "B130",
+      "name": "Tetratronic Rippler",
+      "clean": "Tetratronic Rippler",
+      "number": "130",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714292.jpg"
+    },
+    {
+      "id": "B070",
+      "name": "The Heist",
+      "clean": "The Heist",
+      "number": "070",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714232.jpg"
+    },
+    {
+      "id": "B063",
+      "name": "The Relic - Experimental Biochip (Epic)",
+      "clean": "The Relic - Experimental Biochip",
+      "number": "063",
+      "rarity": "E",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715124.jpg"
+    },
+    {
+      "id": "B137",
+      "name": "Three Mouths, One Desire",
+      "clean": "Three Mouths, One Desire",
+      "number": "137",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714299.jpg"
+    },
+    {
+      "id": "B138",
+      "name": "Towerfall (Epic)",
+      "clean": "Towerfall",
+      "number": "138",
+      "rarity": "E",
+      "image": ""
+    },
+    {
+      "id": "B056",
+      "name": "Trauma Team Operatives",
+      "clean": "Trauma Team Operatives",
+      "number": "056",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714218.jpg"
+    },
+    {
+      "id": "B139",
+      "name": "Trust No One",
+      "clean": "Trust No One",
+      "number": "139",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714301.jpg"
+    },
+    {
+      "id": "B090",
+      "name": "Tyger's Whisper",
+      "clean": "Tyger's Whisper",
+      "number": "090",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714252.jpg"
+    },
+    {
+      "id": "B140",
+      "name": "Unlikely Bond",
+      "clean": "Unlikely Bond",
+      "number": "140",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715131.jpg"
+    },
+    {
+      "id": "B021",
+      "name": "Valentino Guerrera",
+      "clean": "Valentino Guerrera",
+      "number": "021",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714183.jpg"
+    },
+    {
+      "id": "B091",
+      "name": "Valentino Street Racer",
+      "clean": "Valentino Street Racer",
+      "number": "091",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714253.jpg"
+    },
+    {
+      "id": "B104",
+      "name": "We Gotta Live Together",
+      "clean": "We Gotta Live Together",
+      "number": "104",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715140.jpg"
+    },
+    {
+      "id": "B127",
+      "name": "Westbrook Netrunner",
+      "clean": "Westbrook Netrunner",
+      "number": "127",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714289.jpg"
+    },
+    {
+      "id": "B105",
+      "name": "Wild in the Streets",
+      "clean": "Wild in the Streets",
+      "number": "105",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715142.jpg"
+    },
+    {
+      "id": "B092",
+      "name": "Wraith Marauders",
+      "clean": "Wraith Marauders",
+      "number": "092",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715143.jpg"
+    },
+    {
+      "id": "B096",
+      "name": "Zetatech Berserk",
+      "clean": "Zetatech Berserk",
+      "number": "096",
+      "rarity": "C",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/715145.jpg"
+    },
+    {
+      "id": "B064",
+      "name": "Zetatech Faceplate",
+      "clean": "Zetatech Faceplate",
+      "number": "064",
+      "rarity": "UC",
+      "image": "https://product-images.tcgplayer.com/fit-in/284x394/714226.jpg"
+    }
+  ]
+}
